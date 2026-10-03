@@ -37,8 +37,8 @@ By default, the program will:
 
 | Argument | Aliases | Description |
 |----------|---------|-------------|
-| `--share-online` | `--shareonline`, `-shareonline`, `--share`, `-s`, `/shareonline` | Also uploads the report to `share.browselotus.net` and prints a shareable link. The link is copied to the clipboard and opened in your browser. |
-| `-h`, `--help` | `/?`, `-?`, `/h` | Displays a help message and exits. |
+| `-s` | `--shareonline`, `-shareonline`, `--share`, `-s`, `/shareonline` | Also uploads the report to `share.browselotus.net` and prints a shareable link. The link is copied to the clipboard and opened in your browser. |
+| `-h` | `/?`, `-?`, `/h` | Displays a help message and exits. |
 
 ## Examples
 
@@ -59,8 +59,8 @@ SysInfo.exe --help
 
 ## Output
 
-- **Local report:** A Markdown file named `SysInfo_<timestamp>.md` saved next to the executable.
-- **Online Share:** If `--share-online` is used, the program prints a URL in the format:
+- **Local Report:** A Markdown file named `SysInfo_<timestamp>.md` saved next to the executable.
+- **Online Share:** If `-s` is used, the program prints a URL in the format:
   ```
   https://share.browselotus.net/sysinfo?uuid=<random-uuid>
   ```
@@ -75,7 +75,7 @@ SysInfo.exe --help
   - User profile path (and its folder name)
   - MAC addresses
 - Shared reports do **not** include serial numbers, personal names, or network information.
-- The online share service stores the report under a random UUID. The link is unlisted but publicly accessible to anyone who has it.
+- The online share service stores the report under a random UUID but only for 30 days. The link is unlisted but publicly accessible to anyone who has it.
 
 ## Notes
 
