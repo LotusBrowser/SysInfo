@@ -49,12 +49,12 @@ SysInfo.exe
 
 **Generate a report and get a shareable link:**
 ```
-SysInfo.exe --share-online
+SysInfo.exe -s
 ```
 
 **Show help:**
 ```
-SysInfo.exe --help
+SysInfo.exe -h
 ```
 
 ## Output
