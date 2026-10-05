@@ -1,7 +1,11 @@
 # Lotus SysInfo
 
-Lotus SysInfo is a lightweight Windows console utility that collects detailed system information and generates a clean, shareable Markdown report.  
-It is designed to help you quickly share your exact hardware and OS specifications with others-without exposing personal identifiers.
+Lotus SysInfo is a lightweight console utility that collects detailed system information and generates a clean, shareable Markdown report.  
+It is designed to help you quickly share your exact hardware and OS specifications with others—without exposing personal identifiers.
+
+Pre-built, self-contained, single-file executables are available for **Windows x64** and **Linux x64**.
+
+> **Note:** The Windows build provides the complete feature set. The Linux build is provided for cross-platform convenience, but some collectors that rely on WMI, the registry, TPM, Secure Boot, or other Windows-specific APIs may be unavailable or limited.
 
 ## Features
 
@@ -17,15 +21,19 @@ It is designed to help you quickly share your exact hardware and OS specificatio
 - Optionally uploads the report to a public share service and returns a short link.
 - Copies the share link to the clipboard and opens it in your default browser.
 - Works without Administrator rights, but running as Administrator provides fuller TPM and Secure Boot data.
+- Distributed as a single-file, self-contained executable for:
+  - Windows x64
+  - Linux x64
 
 ## Requirements
 
-- Windows 10 or later (the tool relies on WMI, the registry, and Windows-specific APIs).
-- No installation required-just run the executable.
+- **Windows:** Windows 10 or later for full functionality. The tool relies on WMI, the registry, and Windows-specific APIs.
+- **Linux:** Linux x64. Some Windows-specific collectors may not be available.
+- No installation or runtime required—just run the executable.
 
 ## Usage
 
-Run `SysInfo.exe` (or the compiled executable name) from a command prompt or by double-clicking.
+Run `SysInfo.exe` on Windows, or `./SysInfo` on Linux.
 
 By default, the program will:
 1. Collect system information.
@@ -42,19 +50,33 @@ By default, the program will:
 
 ## Examples
 
-**Generate a local report only:**
+**Generate a local report only (Windows):**
 ```
 SysInfo.exe
 ```
 
-**Generate a report and get a shareable link:**
+**Generate a report and get a shareable link (Windows):**
 ```
 SysInfo.exe -s
+```
+
+**Generate a local report only (Linux):**
+```
+./SysInfo
+```
+
+**Generate a report and get a shareable link (Linux):**
+```
+./SysInfo -s
 ```
 
 **Show help:**
 ```
 SysInfo.exe -h
+```
+or
+```
+./SysInfo -h
 ```
 
 ## Output
@@ -79,5 +101,6 @@ SysInfo.exe -h
 
 ## Notes
 
-- Running the tool as Administrator is recommended for the most complete TPM and Secure Boot information. If not elevated, a tip is displayed at the end.
+- Running the tool as Administrator is recommended on Windows for the most complete TPM and Secure Boot information. If not elevated, a tip is displayed at the end.
 - The report is generated in Markdown format, which can be easily viewed in any text editor, Markdown viewer, or pasted into a chat/Discord/forum that supports Markdown.
+- The Linux build may produce a reduced report if Windows-specific collectors are unavailable.
